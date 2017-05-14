@@ -70,13 +70,14 @@
                             <constraint firstItem="7YK-du-bSZ" firstAttribute="top" secondItem="TCj-Xn-hJB" secondAttribute="top" id="lix-83-qoa"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="lMq-7v-0Uf"/>
                     <connections>
                         <outlet property="collectionView" destination="7YK-du-bSZ" id="iZk-yE-ekD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hiv-qb-95i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162.40000000000001" y="164.16791604197903"/>
+            <point key="canvasLocation" x="1101.5999999999999" y="164.16791604197903"/>
         </scene>
     </scenes>
 </document>

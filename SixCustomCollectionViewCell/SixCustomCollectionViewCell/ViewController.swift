@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import MessageUI
 
-class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, MFMailComposeViewControllerDelegate {
 
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var label: UILabel!
     
     var isBlue = false
-    var contentText = ["Alert view","Color switch","Core motion","App's setting page","Navigator","Mail"]
+    var contentText = ["Alert view","Color switch","Core motion","Setting","Navigator","Mail"]
     
     
     override func viewDidLoad() {
@@ -87,11 +88,27 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         case [0,4]:
             print(indexPath)
         case [0,5]:
-            print(indexPath)
+           
+            let composeVC = MFMailComposeViewController()
+            composeVC.mailComposeDelegate = self
+            
+            if MFMailComposeViewController.canSendMail() {
+                
+                composeVC.setSubject("測試信件")
+                self.present(composeVC, animated: true, completion: nil)
+            } else {
+                return
+            }
+            
+            
         default:
             return
         }
     }
     
+    //dismiss composeVC
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
