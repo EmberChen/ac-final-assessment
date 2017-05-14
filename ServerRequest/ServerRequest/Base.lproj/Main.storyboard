@@ -21,17 +21,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFs-xE-dnr">
-                                <rect key="frame" x="285" y="318" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFs-xE-dnr">
+                                <rect key="frame" x="265" y="318" width="40" height="30"/>
                                 <state key="normal" title="POST"/>
                                 <connections>
                                     <action selector="postButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V6e-zB-c4n"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zd-Rv-qKo">
-                                <rect key="frame" x="74" y="318" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zd-Rv-qKo">
+                                <rect key="frame" x="70" y="318" width="30" height="30"/>
                                 <state key="normal" title="GET"/>
                                 <connections>
                                     <action selector="getButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yvx-hc-eGW"/>
@@ -39,6 +37,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0Zd-Rv-qKo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2U1-h5-Yme"/>
+                            <constraint firstItem="fFs-xE-dnr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Nc2-jh-B6L"/>
+                            <constraint firstAttribute="trailing" secondItem="fFs-xE-dnr" secondAttribute="trailing" constant="70" id="OLJ-T9-ifz"/>
+                            <constraint firstItem="0Zd-Rv-qKo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="70" id="nly-P5-zFq"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

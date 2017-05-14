@@ -17,7 +17,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     @IBOutlet weak var label: UILabel!
     
     var pedometer:CMPedometer!
-    var isBlue = false
+    var isBlue = true
     var isWalk = false
     var contentText = ["Alert view","Color switch","Core motion","Setting","Navigator","Mail"]
     
@@ -37,7 +37,14 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCollectionViewCell
+        
+        if indexPath.row == 1{
+            cell.backgroundColor = UIColor.blue
+            cell.label.textColor = UIColor.white
+        }
+        
         cell.label.text = contentText[indexPath.row]
+        
      
         return cell
     }
@@ -97,8 +104,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
 
         case [0,3]:
            
-            let url = URL(string: UIApplicationOpenSettingsURLString)
-            UIApplication.shared.open(url!)
+            if let url = URL(string: UIApplicationOpenSettingsURLString) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
             
         case [0,4]:
             

@@ -31,6 +31,8 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -39,13 +41,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>comgooglemaps</string>
-	</array>
-	<key>NSMotionUsageDescription</key>
-	<string>Need to use your walking info, please tap &quot;OK&quot;.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Need to use your camera, please tap &quot;OK&quot;.</string>
 </dict>
 </plist>
