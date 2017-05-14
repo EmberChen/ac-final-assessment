@@ -389,6 +389,7 @@
 				926EFFAD1EC6204C00D69F5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

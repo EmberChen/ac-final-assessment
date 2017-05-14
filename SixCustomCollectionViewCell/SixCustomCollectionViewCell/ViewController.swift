@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import CoreMotion
 
 class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, MFMailComposeViewControllerDelegate {
 
@@ -15,7 +16,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var label: UILabel!
     
+    var pedometer:CMPedometer!
     var isBlue = false
+    var isWalk = false
     var contentText = ["Alert view","Color switch","Core motion","Setting","Navigator","Mail"]
     
     
@@ -81,23 +84,34 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             }
 
         case [0,2]:
-            print(indexPath)
+            
+            guard CMPedometer.isStepCountingAvailable() else {
+                
+                let machineAlert = UIAlertController(title: "Machine Alert", message: "\nYour device isn't support coreMotion!", preferredStyle: .alert)
+                let dismissAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                machineAlert.addAction(dismissAlert)
+                self.present(machineAlert, animated: true, completion: nil)
+                
+                return
+            }
+
         case [0,3]:
-            print(indexPath)
+           
+            let url = URL(string: UIApplicationOpenSettingsURLString)
+            UIApplication.shared.open(url!)
+            
         case [0,4]:
-            
-            
             
             //before this, need to add plist about LSApplication.......
             if  UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!){
                 //latitude,longitude can't be blank, will fail
                 UIApplication.shared.open(URL(string:"comgooglemaps://?daddr=Alpha+camp&zoom=16&views=driving")!)
             } else {
-                print("Can't use comgooglemaps://")
+                let noGMapAlert = UIAlertController(title: "Warning!", message: "\nYou don't have google map app, please install it.", preferredStyle: .alert)
+                let dismissAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                noGMapAlert.addAction(dismissAlert)
+                self.present(noGMapAlert, animated: true, completion: nil)
             }
-            
-            
-            
             
         case [0,5]:
            
@@ -122,5 +136,6 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         dismiss(animated: true, completion: nil)
     }
+    
 }
 

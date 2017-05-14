@@ -39,9 +39,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>comgooglemaps</string>
-    </array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>comgooglemaps</string>
+	</array>
+	<key>NSMotionUsageDescription</key>
+	<string>Need to use your walking info, please tap &quot;OK&quot;.</string>
 </dict>
 </plist>
