@@ -14,7 +14,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var label: UILabel!
     
-    var isBlue = true
+    var isBlue = false
     var contentText = ["Alert view","Color switch","Core motion","App's setting page","Navigator","Mail"]
     
     
@@ -53,15 +53,23 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     //reload cell when rotate screen
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        collectionView.reloadData()
+        self.collectionView.reloadData()
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         
-        if indexPath.row == 1{
-            print(indexPath)
+        switch indexPath {
+        case [0,0]:
+
+            let alertView = UIAlertController(title: "Alert View", message: "\nYou just tap the alert-view cell!", preferredStyle: .alert)
+            let dismissAlert = UIAlertAction(title: "close", style: .cancel, handler: nil)
+            alertView.addAction(dismissAlert)
+            self.present(alertView, animated: true, completion: nil)
             
+        case [0,1]:
+
             let cell = collectionView.cellForItem(at: indexPath) as! CustomCollectionViewCell
+            
             if isBlue == true{
                 cell.backgroundColor = UIColor.red
                 cell.label.textColor = UIColor.white
@@ -71,15 +79,17 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                 cell.label.textColor = UIColor.white
                 isBlue = true
             }
-        }
-    }
-    
-    
-    func colorSwitch(color:UIColor) -> UIColor{
-        if color == UIColor.blue{
-            return UIColor.red
-        }else{
-            return UIColor.blue
+
+        case [0,2]:
+            print(indexPath)
+        case [0,3]:
+            print(indexPath)
+        case [0,4]:
+            print(indexPath)
+        case [0,5]:
+            print(indexPath)
+        default:
+            return
         }
     }
     
