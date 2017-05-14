@@ -1,0 +1,6 @@
+framework module Pods_SixCustomCollectionViewCell {
+  umbrella header "Pods-SixCustomCollectionViewCell-umbrella.h"
+
+  export *
+  module * { export * }
+}
