@@ -22,7 +22,6 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -86,7 +85,20 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         case [0,3]:
             print(indexPath)
         case [0,4]:
-            print(indexPath)
+            
+            
+            
+            //before this, need to add plist about LSApplication.......
+            if  UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!){
+                //latitude,longitude can't be blank, will fail
+                UIApplication.shared.open(URL(string:"comgooglemaps://?daddr=Alpha+camp&zoom=16&views=driving")!)
+            } else {
+                print("Can't use comgooglemaps://")
+            }
+            
+            
+            
+            
         case [0,5]:
            
             let composeVC = MFMailComposeViewController()
