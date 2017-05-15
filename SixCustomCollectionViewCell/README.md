@@ -7,5 +7,5 @@ Task 4 : 6 custom UICollectionView Cell
 實作寄信頁面功能<br>     
 * Reference:<br>(計步)http://www.hangge.com/blog/cache/detail_1547.html<br>(設定)http://cms.35g.tw/coding/ios8-openurl-uiapplicationopensettingsurlstring/<br>(導航)https://developers.google.com/maps/documentation/ios-sdk/urlscheme?hl=zh-tw<br>(寄信)https://developer.apple.com/reference/messageui/mfmailcomposeviewcontroller
 
-* Note:<br>(1)原先有設計畫面翻轉樣式，但會導致顏色變換的cell位置跑掉，待解<br>(2)計步功能因為機型限制，無法在iPhone5C上使用此功能<br>(3)開啟設定功能，因為此範例沒有使用到需要使用者同意的權限，所以在設定頁面沒有這個APP的相關設定內容，在開啟設定頁面時看起來會像crash，若此時點擊設定頁面再回到APP進行該操作，則可正常開啟設定頁面。參考網站:http://stackoverflow.com/questions/39792745/ios-10-open-settings-crash<br>(4)寄信功能驗證需登入信箱帳號，才可正常使用
+* Note:<br>(1)原先有設計畫面翻轉樣式，但會導致顏色變換的cell位置跑掉，待解<br>(2)計步功能因為機型限制，無法在iPhone5C上使用此功能<br>(3)開啟設定功能，因為此範例沒有使用到需要使用者同意的權限，所以在設定頁面沒有這個APP的相關設定內容，在開啟設定頁面時看起來會像crash，若此時點擊設定頁面再回到APP進行該操作，則可正常開啟設定頁面。參考網站:http://stackoverflow.com/questions/39792745/ios-10-open-settings-crash<br>(4)寄信功能驗證需登入信箱帳號，才可正常使用<br>(5)開啟google map app，須在plist加入設定，才可正常作用。參考網站：http://ichunchen.blogspot.tw/2015/10/ios-9-url-scheme-ios9.html
 
